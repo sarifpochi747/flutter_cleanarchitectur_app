@@ -1,0 +1,55 @@
+name: clean_architecture_tdd
+description: "TDD Clean Architecture for Flutter"
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+  
+dependencies:
+  flutter:
+    sdk: flutter
+
+# Value equality
+  equatable: ^2.0.5
+
+  # service DI
+  get_it: ^7.6.7
+  injectable: ^2.3.5
+
+  # bloc for state management
+  flutter_bloc: ^8.1.5
+  bloc: ^8.1.4
+
+  # Functional programming thingies
+  dartz: ^0.10.1
+
+  # Remote Api
+  http: ^1.2.0
+  connectivity: ^3.0.6
+
+  # Local Cache
+  shared_preferences: ^2.2.2
+
+  # database on supabase
+  supabase_flutter: ^2.5.0
+
+  # common
+  dotted_border: ^2.1.0
+  image_picker: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  mocktail: ^1.0.3
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.9
+  injectable_generator: ^2.4.2
+
+flutter:
+
+  uses-material-design: true
+
