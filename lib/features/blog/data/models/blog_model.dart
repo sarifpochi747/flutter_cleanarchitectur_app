@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this
+
 import 'dart:convert';
 import 'package:clean_architecture_tdd/core/utils/typedef.dart';
 import 'package:clean_architecture_tdd/features/blog/domain/entities/blog.dart';
@@ -24,14 +26,17 @@ class BlogModel extends Blog{
       title: map['title'] ?? '',
       content: map['content'] ?? '',
       imageUrl: map['imageUrl'] ?? '',
-      topics: List<String>.from(map['topics']),
-      updateAt: DateTime.fromMillisecondsSinceEpoch(map['updateAt']),
-    );
+      topics: List<String>.from(map['topics'] ?? []),
+      updateAt: map['updated_at'] == null
+          ? DateTime.now()
+          : DateTime.parse(map['updated_at']),    );
   }
 
   String toJson() => json.encode(toMap());
 
   factory BlogModel.fromJson(String source) => BlogModel.fromMap(json.decode(source));
 
-
+  BlogModel copyWith({String? postId,String? title,String? content, String? imageUrl,List<String>? seletedTopics,DateTime? updateAt}){
+    return BlogModel(id: id?? this.id, posterId: posterId?? this.posterId, title: title?? this.title, content: content?? this.content, imageUrl: imageUrl?? this.imageUrl, topics: topics?? this.topics, updateAt: updateAt?? this.updateAt);
+  }
 }

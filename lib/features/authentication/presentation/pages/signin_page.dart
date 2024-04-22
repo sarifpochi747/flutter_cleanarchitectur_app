@@ -72,7 +72,6 @@ class _SignInPageState extends State<SignInPage> {
                   height: 30,
                 ),
                 AuthButton(
-                  formKey: formKey,
                   textButton: "Sign In",
                   onPressed: () {
                     if (formKey.currentState!.validate()) {

@@ -74,7 +74,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   height: 30,
                 ),
                 AuthButton(
-                  formKey: formKey,
                   textButton: "Sign Up",
                   onPressed: () {
                     if (formKey.currentState!.validate()) {

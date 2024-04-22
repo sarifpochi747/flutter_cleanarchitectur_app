@@ -4,10 +4,9 @@ import 'package:clean_architecture_tdd/core/theme/app_pallete.dart';
 import 'package:flutter/material.dart';
 
 class AuthButton extends StatelessWidget {
-  final GlobalKey<FormState> formKey;
   final String textButton;
   final VoidCallback onPressed;
-  const AuthButton({super.key, required this.formKey, required this.textButton, required this.onPressed});
+  const AuthButton({super.key, required this.textButton, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

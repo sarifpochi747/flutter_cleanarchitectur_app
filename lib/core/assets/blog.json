@@ -1,0 +1,28 @@
+[
+  {
+    "id": "123456",
+    "posterId": "78910",
+    "title": "Exploring the Wonders of Deep Learning",
+    "content": "Deep learning has revolutionized the field of artificial intelligence...",
+    "imageUrl": "https://example.com/deep_learning.jpg",
+    "topics": [
+      "Artificial Intelligence",
+      "Deep Learning",
+      "Neural Networks"
+    ],
+    "updatedAt": "2024-03-21T14:20:00+07:00"  
+  },
+  {
+    "id": "123456",
+    "posterId": "78910",
+    "title": "Exploring the Wonders of Deep Learning",
+    "content": "Deep learning has revolutionized the field of artificial intelligence...",
+    "imageUrl": "https://example.com/deep_learning.jpg",
+    "topics": [
+      "Artificial Intelligence",
+      "Deep Learning",
+      "Neural Networks"
+    ],
+    "updatedAt": "2024-04-19T14:20:00+07:00"  
+  }
+]

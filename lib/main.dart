@@ -4,6 +4,7 @@ import 'package:clean_architecture_tdd/core/common/cubits/app_user/app_user_cubi
 import 'package:clean_architecture_tdd/core/theme/theme.dart';
 import 'package:clean_architecture_tdd/features/authentication/presentation/bloc/auth_bloc.dart';
 import 'package:clean_architecture_tdd/features/authentication/presentation/pages/signup_page.dart';
+import 'package:clean_architecture_tdd/features/blog/presentation/bloc/blog_bloc.dart';
 import 'package:clean_architecture_tdd/features/blog/presentation/pages/blog_page.dart';
 import 'package:clean_architecture_tdd/init_dependencies.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,9 @@ class _MyAppState extends State<MyApp> {
         BlocProvider( 
           create: (context) => serviceLocator<AppUserCubit>() 
         ),
-        // BlocProvider(create: (context) => BlogBloc());
+        BlocProvider(
+          create: (context)=> serviceLocator<BlogBloc>()
+        )
       ], 
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

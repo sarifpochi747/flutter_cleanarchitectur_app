@@ -1,0 +1,3 @@
+String calulatorReadingTime(){
+  return "r";
+}

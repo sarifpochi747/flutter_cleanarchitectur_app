@@ -48,9 +48,8 @@ class AuthenticationRepositoryImplementation implements AuthenticationRepository
       return right(userId);
     } on APIException catch (e) {
 
-      Left(APIFailure.fromException(e));
+      return  Left(APIFailure.fromException(e));
     }
-    throw UnimplementedError();
   }
   
   @override
@@ -59,9 +58,8 @@ class AuthenticationRepositoryImplementation implements AuthenticationRepository
       final user = await  authenticationRemoteDataSource.signUpWithEmailPassword(email: email, password: password,name: name);
       return right(user);
     } on APIException catch (e) {
-      left(APIFailure.fromException(e));
+      return left(APIFailure.fromException(e));
     }
-      throw Exception("Unreachable code");
   }
   
   // @override

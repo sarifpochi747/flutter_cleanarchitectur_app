@@ -16,12 +16,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final UserSignIn _userSignIn;
   final AppUserCubit _appUserCubit;
   AuthBloc(this._userSignUp, this._userSignIn, this._appUserCubit) : super(AuthInitial()) {
+    on<AuthEvent>((event,emit)=> emit(AuthLoading()));
     on<AuthSignUp>(_authSignUp);
     on<AuthSignIn>(_authSignIn);
   }
 
   Future<FutureOr<void>> _authSignUp(AuthSignUp event, Emitter<AuthState> emit) async {
-      emit(AuthLoading());
       final res = await  _userSignUp.call(ParamsSignUp(name: event.name, email: event.email, password: event.password));
       res.fold(
         (failure) => _emitAuthFailure(failure, emit),
@@ -30,7 +30,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<FutureOr<void>> _authSignIn(AuthSignIn event, Emitter<AuthState> emit) async {
-    emit(AuthLoading());
     final response = await _userSignIn.call(ParamsSignIn(email: event.email, password: event.password));
     response.fold(
       (failure) => _emitAuthFailure(failure, emit), 

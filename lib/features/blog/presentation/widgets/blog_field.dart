@@ -15,9 +15,9 @@ class BlogField extends StatelessWidget {
         // hoverColor: Colors.amber
       ),
       maxLines: null,
-      autovalidateMode: AutovalidateMode.always,
+      // autovalidateMode: AutovalidateMode.always,
       validator: (value) {
-        if(value == null){
+        if(value == null || value.isEmpty){
           return "$placeHolder is missing";
         }
         return null;
